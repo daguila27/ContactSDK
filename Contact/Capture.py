@@ -27,6 +27,8 @@ class Capture:
 
     def __init__(self, camera = 0, screenWidth = 800, screenHeight = 600):
         self.captureCamera = cv2.VideoCapture(camera)
+
+        self.pantalla = pygame.display.set_mode((screenWidth, screenHeight))
         self.screenWidth = screenWidth 
         self.screenHeight = screenHeight
         self.shapeContactPoint = [[0, 0], [screenWidth,0], [0, screenHeight], [screenWidth, screenHeight]]
@@ -198,9 +200,13 @@ class Capture:
 
     def calibrateContact(self, windowName = 'Calibration DEFAULT'):
         self.calibrate(windowName)
-
+    
+    pantalla = pygame.display.set_mode((800, 600))
     def show(self, windowName = 'Camera DEFAULT'):
+        self.pantalla.fill((255,255,255))
         cv2.imshow(windowName, self.captureImage) 
+        pygame.display.update()
+        pygame.display.flip()
 
     def capture(self):
         self.captureIteration()

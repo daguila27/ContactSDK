@@ -175,6 +175,7 @@ class Contact:
                 self.start()
             self.checkShapes()
             self.showCapture()
+        cv2.waitKey(1)   
 
     def finish(self):
         self.frontCapture.finish()

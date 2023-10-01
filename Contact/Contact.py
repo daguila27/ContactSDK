@@ -30,8 +30,7 @@ class Contact:
         pygame.init()
         self.screenWidth = screenWidth
         self.screenHeight = screenHeight
-        self.sonidoColision = pygame.mixer.Sound(
-            "sonidos/marcarJugada.mp3")
+        ##self.sonidoColision = pygame.mixer.Sound("sonidos/marcarJugada.mp3")
         
         self.frontCapture = Capture(0, screenWidth, screenHeight)
         self.frontCapture.proportionFactor = proportionFactor
@@ -72,7 +71,7 @@ class Contact:
         return self.wallCapture.captureImage
 
 
-    sonidoColision = 0
+    ##sonidoColision = 0
 
     def appendShape(self, shape):
         self.frontCapture.shapes.append(shape) 

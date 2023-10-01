@@ -203,10 +203,8 @@ class Capture:
     
     pantalla = pygame.display.set_mode((800, 600))
     def show(self, windowName = 'Camera DEFAULT'):
-        self.pantalla.fill((255,255,255))
         cv2.imshow(windowName, self.captureImage) 
         pygame.display.update()
-        pygame.display.flip()
 
     def capture(self):
         self.captureIteration()
